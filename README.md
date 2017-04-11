@@ -11,7 +11,7 @@ PageRank(graph=networkx.DiGraph(),d=0.85,epsilon=0.0001)
 ```
 This initializes the graph and also calculates the PageRank for the initial nodes and stores it. This is calculated using the normal power iteration method for computing PageRank. It checks for convergence using Euclidean Norm.
 
-Arguements:
+Arguments:
 
 1. **graph**: This is the graph that is to be given for initialization. By default, it creates an empty graph and uses it if nothing is provided. Type: NetworkX DiGraph.
 2. **d**: This is the damping factor that is used for calculating Page Rank. By default, it is set to 0.85. Type: float
@@ -27,9 +27,15 @@ This is the main function that implements the Incremental PageRank Algorithm. It
 
 Arguments:
 
-**graph**: This is the graph containing the edges that are to be added into the graph.
+1. **graph**: This is the graph containing the edges that are to be added into the graph.
 
-Plotting
+**Normalized Page Ranks**
+```
+normalized_pagerank()
+```
+This function calculates the normalized page rank that can be used to compare two graphs based on this [paper](https://domino.mpi-inf.mpg.de/intranet/ag5/ag5publ.nsf/0/31deb7636690f704c125729c003181ef/$file/www2007.pdf).
+
+**Plotting**
 ```
 printgraph(node)
 ```
