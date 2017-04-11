@@ -93,6 +93,15 @@ class PageRank:
 		su=sum(ans[n] for n in ans)
 		for n in ans: ans[n]/=su
 		self.prhist.append(ans)
+	def retranks(self):
+		ranks=self.prhist[len(self.prhist)-1].copy()
+		rvals=[ranks[n] for n in ranks]
+		rvals=sorted(rvals,reverse=True)
+		x=[]
+		for l in rvals:
+			n=[k for k in ranks if ranks[k]==l]
+			x.append(n[0])
+		return x
 	def normalized_pagerank(self):
 		danglingnodes=[n for n in self.graph if self.graph.out_degree(n)==0.0]
 		self.rlow=0

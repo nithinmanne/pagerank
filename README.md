@@ -19,6 +19,12 @@ Arguments:
 
 **This class has many funcitons that are used for the incremental Page Rank calculation and other utilities.**
 
+**Return Rank**
+```
+retranks()
+```
+This Function returns a list of nodes based on their PageRanks.
+
 **Incremental Algorithm**
 ```
 addgraph(graph)
@@ -28,6 +34,7 @@ This is the main function that implements the Incremental PageRank Algorithm. It
 Arguments:
 
 1. **graph**: This is the graph containing the edges that are to be added into the graph.
+
 
 **Normalized Page Ranks**
 ```
