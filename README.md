@@ -65,6 +65,7 @@ Arguments:
 2.**x**: This is the number of previous nodes to be used for prediciton
 3.**i**: This is used to signify the timestamp of prediction. It is used to predict already calculated PageRanks, just for comparision. By default, it predicts the next node.
 
+```
 predict_pagerank2(node,x,i)
 ```
 This function predicts the next pagerank value using polynomial fitting for the history of pagerank differentials.
