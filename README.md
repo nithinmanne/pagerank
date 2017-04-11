@@ -71,11 +71,9 @@ predict_pagerank2(node,x,i)
 This function predicts the next pagerank value using polynomial fitting for the history of pagerank differentials.
 Arguments:
 
-1.**node**: This is the node for which the page rank is to be predicted
-
-2.**x**: This is the number of previous nodes to be used for prediciton
-
-3.**i**: This is used to signify the timestamp of prediction. It is used to predict already calculated PageRanks, just $
+1. **node**: This is the node for which the page rank is to be predicted
+2. **x**: This is the number of previous nodes to be used for prediciton
+3. **i**: This is used to signify the timestamp of prediction. It is used to predict already calculated PageRanks, just $
 
 ## Getting Started
 
