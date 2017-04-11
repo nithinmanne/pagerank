@@ -177,4 +177,5 @@ class PageRank:
                    b.append(j)
                 c=np.polyfit(b,a,2)
                 p=np.poly1d(c)
+		if node in self.prhist[k]: return p(0)/1000.0
 		return self.prhist[k][node]+p(0)/1000.0

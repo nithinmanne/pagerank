@@ -72,16 +72,16 @@ def test(filename=None,parts=100,esc=" "):
 		for i in x:
 			if nodes[rand] in cl.prhist[i]: y.append(cl.prhist[i][nodes[rand]])
 			else : y.append(0)
-		pyplot.plot(x,y,"g",label="Actual Page Rank")
+		pyplot.plot(x,y,label="Actual Page Rank")
 		x=xrange(2,len(cl.prhist))
 		y1=[cl.predict_pagerank1(nodes[rand],5,i) for i in x]
 		y2=[cl.predict_pagerank2(nodes[rand],5,i) for i in x]
-		pyplot.plot(x,y1,"g",label="Polynomial Prediction")
-		pyplot.plot(x,y2,"m",label="Differential Polynomial Prediction")
+		pyplot.plot(x,y1,label="Polynomial Prediction")
+		pyplot.plot(x,y2,label="Differential Polynomial Prediction")
 		eavg=cl.exppagerank(nodes[rand],1)
 		lavg=cl.logpagerank(nodes[rand],1)
-		pyplot.plot([0,len(cl.prhist)-1],[eavg,eavg],"r-",label="Exponential Average")
-		pyplot.plot([0,len(cl.prhist)-1],[lavg,lavg],"b-",label="Logarithemic Average")
+		pyplot.plot([0,len(cl.prhist)-1],[eavg,eavg],label="Exponential Average")
+		pyplot.plot([0,len(cl.prhist)-1],[lavg,lavg],label="Logarithemic Average")
 		pyplot.savefig("figs/{}.png".format(nodes[rand]))
 		pyplot.close('all')
 	

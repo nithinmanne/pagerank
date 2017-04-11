@@ -17,14 +17,15 @@ Arguements:
 2. **d**: This is the damping factor that is used for calculating Page Rank. By default, it is set to 0.85. Type: float
 3. **epsilon**: This is the threshold of convergence. If the Euclidean norm of the difference between the approximations of the steady state vector before and after an iteration of power iteration is smaller than epsilon, the algorithm will consider itself to have converged and will terminate. Type: float
 
-This class has many funcitons that are used for the incremental Page Rank calculation and other utilities.
+**This class has many funcitons that are used for the incremental Page Rank calculation and other utilities.**
 
+**Incremental Algorithm**
 ```
 addgraph(graph)
 ```
 This is the main function that implements the Incremental PageRank Algorithm. It separates the graph into two parts and implements PageRank only on the effected nodes, and simply scales the unaffected nodes.
 
-Arguements:
+Arguments:
 
 **graph**: This is the graph containing the edges that are to be added into the graph.
 
@@ -34,34 +35,44 @@ printgraph(node)
 ```
 This function plots the history of the pagerank of the given node
 
-Average PageRank Calculation over time
+**Average PageRank Calculation over time**
 ```
 exppagerank(node,a)
 ```
 This function calculates the average pagerank of the given node by exponential scaling.
-Arguements:
+Arguments:
 
-**node**: This is the node for which the average is to be calculated.
-**a**: This is the factor for exponential scaling
+1. **node**: This is the node for which the average is to be calculated.
+2. **a**: This is the factor for exponential scaling
 
 ```
 logpagerank(node,a)
 ```
 This function calculates the average pagerank of the given node by logarithmic scaling.
-Arguements:
+Arguments:
 
-**node**: This is the node for which the average is to be calculated.
-**a**: This is the factor for logarithmic scaling
+1. **node**: This is the node for which the average is to be calculated.
+2. **a**: This is the factor for logarithmic scaling
 
-PageRank Prediciton
+**PageRank Prediciton**
 ```
 predict_pagerank1(node,x,i)
 ```
 This function predicts the next pagerank value using polynomial fitting for the history of pageranks.
-Arguements:
+Arguments:
 
-**node**: This is the node for which the average is to be calculated.
-**a**: This is the factor for exponential scaling
+1.**node**: This is the node for which the page rank is to be predicted
+2.**x**: This is the number of previous nodes to be used for prediciton
+3.**i**: This is used to signify the timestamp of prediction. It is used to predict already calculated PageRanks, just for comparision. By default, it predicts the next node.
+
+predict_pagerank2(node,x,i)
+```
+This function predicts the next pagerank value using polynomial fitting for the history of pagerank differentials.
+Arguments:
+
+1.**node**: This is the node for which the page rank is to be predicted
+2.**x**: This is the number of previous nodes to be used for prediciton
+3.**i**: This is used to signify the timestamp of prediction. It is used to predict already calculated PageRanks, just $
 
 ## Getting Started
 
