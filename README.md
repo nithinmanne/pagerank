@@ -21,9 +21,22 @@ Arguments:
 
 **Return Rank**
 ```
-retranks()
+retranks(i)
 ```
 This Function returns a list of nodes based on their PageRanks.
+
+Arguments:
+
+1. **i**: This gives the list when calculated for the 'i'th iteration
+
+```
+growthrank(i)
+```
+This Function returns a list of nodes based on their PageRank growth.
+
+Arguments:
+
+1. **i**: This gives the list when calculated for the 'i'th iteration
 
 **Incremental Algorithm**
 ```
@@ -53,6 +66,7 @@ This function plots the history of the pagerank of the given node
 exppagerank(node,a)
 ```
 This function calculates the average pagerank of the given node by exponential scaling.
+
 Arguments:
 
 1. **node**: This is the node for which the average is to be calculated.
@@ -62,6 +76,7 @@ Arguments:
 logpagerank(node,a)
 ```
 This function calculates the average pagerank of the given node by logarithmic scaling.
+
 Arguments:
 
 1. **node**: This is the node for which the average is to be calculated.
@@ -72,6 +87,7 @@ Arguments:
 predict_pagerank1(node,x,i)
 ```
 This function predicts the next pagerank value using polynomial fitting for the history of pageranks.
+
 Arguments:
 
 1. **node**: This is the node for which the page rank is to be predicted
@@ -82,6 +98,7 @@ Arguments:
 predict_pagerank2(node,x,i)
 ```
 This function predicts the next pagerank value using polynomial fitting for the history of pagerank differentials.
+
 Arguments:
 
 1. **node**: This is the node for which the page rank is to be predicted

@@ -93,8 +93,9 @@ class PageRank:
 		su=sum(ans[n] for n in ans)
 		for n in ans: ans[n]/=su
 		self.prhist.append(ans)
-	def retranks(self):
-		ranks=self.prhist[len(self.prhist)-1].copy()
+	def retranks(self,i=-1):
+		if i==-1: i=len(self.prhist)-1
+		ranks=self.prhist[i].copy()
 		rvals=[ranks[n] for n in ranks]
 		rvals=sorted(rvals,reverse=True)
 		x=[]
@@ -188,3 +189,21 @@ class PageRank:
                 p=np.poly1d(c)
 		if node not in self.prhist[k]: return p(0)/1000.0
 		return self.prhist[k][node]+p(0)/1000.0
+	def growthrank(self,i=-1): 
+		if i==-1: i=len(self.prhist)-1
+		growth=dict()
+		for n in self.graph: 
+			if n in self.prhist[i-1]:
+				growth[n]=self.prhist[i][n]-self.prhist[i-1][n]
+				continue
+			if n in self.prhist[i]:
+				growth[n]=self.prhist[i][n]
+				continue
+			growth[n]=0
+		rvals=[growth[n] for n in growth]
+                rvals=sorted(rvals,reverse=True)
+                x=[]
+                for l in rvals:
+                        n=[k for k in growth if growth[k]==l]
+                        x.append(n[0])
+                return x
