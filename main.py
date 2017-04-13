@@ -23,7 +23,7 @@ def test(filename=None,parts=100,esc=" "):
 	t=time.time()
 	cl=ocoden.PageRank(g)
 	print "Time for Initial Page Rank : {}".format(time.time()-t)
-	g.clear()
+	#g.clear()
 	j=0
 	i=0
 	x=[]
@@ -107,7 +107,7 @@ def run(filename=None,parts=10,esc=" "):
                 g.add_edge(int(a[0]),int(a[1]))
                 if i==n: break
         cl=ocoden.PageRank(g)
-        g.clear()
+        #g.clear()
         j=0
         i=0
         for l in f:

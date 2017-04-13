@@ -37,10 +37,18 @@ class PageRank:
 		self.prhist.append(ans)
 		print "Number of Iterations : {}".format(i)
 	def addgraph(self,graph):
+		#print "First:{}".format(len(graph.edges()))
+		for i,j in self.graph.edges():
+			try:
+				graph.remove_edge(i,j)
+			except:
+				pass
+		#print "Second:{}".format(len(graph.edges()))
 		vchanged=set()
 		vunchanged=set()
-		for node in graph:
-			vchanged.add(node)
+		for i,j in graph.edges():
+			vchanged.add(i)
+			vchanged.add(j)
 		for node in self.graph:
 			vunchanged.add(node)
 		vunchanged=vunchanged.difference(vchanged)
