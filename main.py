@@ -4,6 +4,7 @@ import time
 from matplotlib import pyplot
 from random import randint
 import sys
+import os
 
 def test(filename=None,parts=100,esc=" "):
 	f=open(filename)
@@ -50,11 +51,17 @@ def test(filename=None,parts=100,esc=" "):
 	x.sort()
 	ys=[y[n] for n in x]
 	#pyplot.ion()
-	#pyplot.figure("Times Faster vs. Change")
-	#pyplot.xlabel("Percentage of Change")
-	#pyplot.ylabel("Times Faster")
-	#pyplot.plot(x,ys,"o")
+	pyplot.figure("Times Faster vs. Change")
+	pyplot.xlabel("Percentage of Change")
+	pyplot.ylabel("Times Faster")
+	pyplot.plot(x,ys,"o")
 	#pyplot.ioff()
+	try:
+		os.stat("figs")
+	except:
+		os.mkdir("figs")
+	pyplot.savefig("figs/time.png")
+	pyplot.close('all')
 	nodes=cl.graph.nodes()
 	l=len(nodes)-1
 	if l<500: return
