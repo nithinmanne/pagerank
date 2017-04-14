@@ -44,6 +44,8 @@ class PageRank:
 			except:
 				pass
 		#print "Second:{}".format(len(graph.edges()))
+		print "Present No. of Edges : {}".format(len(self.graph.edges()))
+		print "Added No. of Edges : {}".format(len(graph.edges()))
 		vchanged=set()
 		vunchanged=set()
 		for i,j in graph.edges():
