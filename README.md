@@ -145,7 +145,6 @@ main.test(filename)
 
 * **Manne Naga Nithin** - [nithinmanne](https://github.com/nithinmanne)
 * **Mekala Rajasekhar Reddy**
-* **Ashish PVJS** - [ashishpvjs](https://github.com/AshishPvjs)
 
 ## Acknowledgments
 
